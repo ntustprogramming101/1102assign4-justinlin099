@@ -97,6 +97,22 @@ void setup() {
 			soilHealth[i][j] = 15;
 		}
 	}
+  for(int i=0;i<8;i++){//layer1 to 8
+      soilHealth[i][i]+=15;
+  }
+  for(int i=0;i<8;i++){//layer9-16
+      for(int j=8;j<16;j++){
+        if(j==8 || j==11||j==12||j==15){
+          if(i==1 || i==2||i==5||i==6){
+          soilHealth[i][j]+=15;
+          }
+        }else{
+          if(i==0 || i==3||i==4||i==7){
+          soilHealth[i][j]+=15;
+          }
+        }
+      }
+    }
 
 	// Initialize soidiers and their position
 
@@ -289,7 +305,7 @@ void draw() {
 		// > Remember to stop player's moving! (reset playerMoveTimer)
 		// > Remember to recalculate playerCol/playerRow when you reset playerX/playerY!
 		// > Remember to reset the soil under player's original position!
-
+    
 		// Demo mode: Show the value of soilHealth on each soil
 		// (DO NOT CHANGE THE CODE HERE!)
 
