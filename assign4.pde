@@ -100,7 +100,7 @@ void initSoldier(){
   soldierX = new float[6];
   soldierY = new float[6];
   for(int i=0;i<6;i++){
-    soldierX[i]=floor(random(0,8));
+    soldierX[i]=random(0,8);
     soldierY[i]=4*i+floor(random(0,4));
   }
 }
